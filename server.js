@@ -117,6 +117,24 @@ app.get('/api/reviews', (req, res) => {
     res.json(filteredReviews);
 });
 
-
+app.post('/api/reviews', upload.single('image'), (req,res)=>{
+    try{
+        const{reviewerName, email, phoneModel, rating, reviewText} =req.body;
+        if(!reviewerName || !email || !phoneModel || !rating || !reviewText){
+            if(req.file){
+                fs.unlinkSync(path.join('ss',req.file.filename));
+            }
+            return res.status(400).json({error:'All fields are required'})
+        }
+        const newReview ={
+            id: nextId++,
+            reviewername,
+            email,
+            phoneModel,
+            rating: parseInt(rating),
+            
+        }
+    }
+} )
 
 
