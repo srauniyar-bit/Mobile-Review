@@ -132,9 +132,31 @@ app.post('/api/reviews', upload.single('image'), (req,res)=>{
             email,
             phoneModel,
             rating: parseInt(rating),
-            
+            reviewText,
+            imageFilename: req.file ? req.file.filename : null,
+            createdAt: new Date(). toISOString()
+        };
+        reviews.push(newReview);
+        res.status(201).json(newReview);
+    }catch(error){
+        if (req.file){
+            fs.unlinkSync(path.join('ss',req.file.filename));
+        }
+        res.status(500).json({ error: 'Failed to submit review'});
+    }
+} );
+
+app.use((error,req,res,next)=>{
+    if(error instanceof multer.MulterError){
+        if (error.code === 'LIMIT_FILE_SIZE'){
+            return res.status(400).json({ error:'File size too large. Maximum 5MB.'});
         }
     }
-} )
+    res.status(500).json({ error: error.message || 'Internal server error'});
+});
+
+app.listen(PORT, ()=> {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
 
 
