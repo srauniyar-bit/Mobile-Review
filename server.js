@@ -96,6 +96,27 @@ id: 5,
 
 
 },
+];
+
+let nextId=6;
+
+app.get('/api/reviews', (req, res) => {
+    const search = req.query.search?.toLowerCase() || '';
+    
+    let filteredReviews = reviews;
+    if (search) {
+        filteredReviews = reviews.filter(r => 
+            r.phoneModel.toLowerCase().includes(search) ||
+            r.reviewText.toLowerCase().includes(search) ||
+            r.reviewerName.toLowerCase().includes(search)
+        );
+    }
+    
+    filteredReviews.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    
+    res.json(filteredReviews);
+});
 
 
-] 
+
+
