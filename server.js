@@ -42,16 +42,24 @@ const allowedTypes = /jpeg|jpg|png|gif|webp/;
     }
 });
 
-let review=[
+let reviews = [
     {
-        id:1,
-        reviewerName: "Sarah Magar"
-        email: "sarahmagar@gmail.com",
-        phoneModel:"Iphone 16 pro max"
-        rating:5,
-        reviewText: "The titanium build quality is exceptional. The Action Button is genuinely useful once customized. Battery life easily lasts a full day with heavy usage. Camera system produces stunning photos in low light. The 5x telephoto is a game-changer for portrait photography."
-    imageFilename:"  ",
-    createdAt: new Date('2026-09-12')
+        id: 1,
+        reviewerName: "Sarah magar",
+        email: "sarah@email.com",
+        phoneModel: "iPhone 15 Pro",
+        rating: 5,
+        reviewText: "The titanium build quality is exceptional. The Action Button is genuinely useful once customized. Battery life easily lasts a full day with heavy usage. Camera system produces stunning photos in low light. The 5x telephoto is a game-changer for portrait photography.",
+        imageFilename: "  ",  //ss
+        createdAt: new Date('2024-01-15').toISOString()
     },
-    
+    {
+        id: 2,
+        reviewerName: "Bobby Rai",
+        email: "BobbyRai@gmail.com",
+        phoneModel: "Google pixel 8",
+        rating:4,
+        reviewText: "Clean Android experience with timely updates. The AI photo editing features are impressive—Magic Eraser works flawlessly. Display is bright and color-accurate. Battery is decent but not class-leading. Tensor G3 handles daily tasks smoothly but can thermal throttle under sustained load.",
+    imageFilename:"   "  //ss
+    }
 ] 
