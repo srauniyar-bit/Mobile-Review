@@ -14,6 +14,7 @@ In server.js:
 2. Used to help me in search query coding cuz something was mistake while writting it at code lines 103-118 
 
 In index.html
-1. Used in code 32-36, for color code and coding help
-2. Used in code 45 for help to write the code
+1. Used in code 32-36, the code "<div class="star-rating">" & "<input type="hidden" id="rating">" was written using the help of AI as to know the cursor movement in the screen
+2. Used in code 
+3. Used in code
 
